@@ -1,5 +1,9 @@
 import polera from '../img/polera.jpg';
 function Main(props) {
+    let contador=0;
+    const handleClick = () => {
+        console.log("click")
+    }
     return (
     <>
     <div className='card-product container'>
@@ -12,7 +16,7 @@ function Main(props) {
                 <div className='product'>
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
-                    <p>$<span>{props.valor}</span></p>
+                    <p>$<span>{props.newvalor}</span></p>
                 </div>
             </div>
             <div className='hijo'>
@@ -20,7 +24,7 @@ function Main(props) {
                 <div className='product'>
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
-                    <p>$<span>{props.valor}</span></p>
+                    <p>$<span>{props.newvalor}</span></p>
                 </div>
             </div>
             <div className='hijo'>
@@ -28,8 +32,15 @@ function Main(props) {
                 <div className='product'>
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
-                    <p>$<span>{props.valor}</span></p>
+                    <p>$<span>{props.newvalor}</span></p>
                 </div>
+            </div>
+            <div>
+            <h4>{props.nombre}</h4>
+                    <p>$<span>{props.valor}</span></p>
+                    <p>$<span>{props.newvalor}</span></p>
+                    <p>cantidad: <span>{contador}</span></p>
+                    <button onClick={handleClick} className='btn btn-color'>aumentar</button>
             </div>
 
         </div>
@@ -37,6 +48,6 @@ function Main(props) {
     
     </>
     )
-
+ 
 }
 export default Main

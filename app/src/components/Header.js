@@ -1,12 +1,17 @@
 import Navbar from "./NavBar";
 import IconsNavbar from "./IconsNavbar";
-import logo from '../logo.svg';
-function Header() {
+function Header(props) {
     return (
-        <header>
-            <img src={logo} className="" alt="logo" />
-            <Navbar />
-            <IconsNavbar />
+        <header className="header">
+            <div className="container">
+                <div>
+                    <img src={props.logo} className="" alt="logo" />
+                    <h1>Tienda</h1>
+                </div>
+                <Navbar />
+                <IconsNavbar />
+            </div>
+
         </header>
     );
 }

@@ -1,11 +1,19 @@
-import polera from '../img/polera.jpg';
-function Main(props) {
-    let contador=0;
+import {useState} from "react"
+const Main = (props) => {
+    const [contador, setContador] = useState(props.initial)
     const handleClick = () => {
-        console.log("click")
+        if (props.stock>contador) {
+            setContador(contador + 1)
+        } 
     }
+    const restar = () => {
+        if (contador!=0) {
+            setContador(contador - 1)
+        }
+        
+    }
+    const miOnAdd = () =>{}
     return (
-    <>
     <div className='card-product container'>
         <div>
             <h2 className='title'>titulo de los productos</h2>
@@ -17,7 +25,14 @@ function Main(props) {
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
                     <p>$<span>{props.newvalor}</span></p>
-                </div>
+                    
+                    </div>
+                <div>
+                    <p>Cantidad: <span>{contador}</span></p>
+                <button className='btn btn-color' onClick={restar}>menos</button>
+                    <button className='btn btn-color' onClick={handleClick}>aumentar</button>
+                    
+                </div>    
             </div>
             <div className='hijo'>
                 <img src={props.polera} alt=""></img>
@@ -25,7 +40,14 @@ function Main(props) {
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
                     <p>$<span>{props.newvalor}</span></p>
-                </div>
+                    
+                    </div>
+                <div>
+                    <p>Cantidad: <span>{contador}</span></p>
+                <button className='btn btn-color' onClick={restar}>menos</button>
+                    <button className='btn btn-color' onClick={handleClick}>aumentar</button>
+                    
+                </div>    
             </div>
             <div className='hijo'>
                 <img src={props.polera} alt=""></img>
@@ -33,21 +55,20 @@ function Main(props) {
                     <h4>{props.nombre}</h4>
                     <p>$<span>{props.valor}</span></p>
                     <p>$<span>{props.newvalor}</span></p>
+                    
+                    </div>
+                <div className="cantidad">
+                    
+                    <button className='btn btn-color' onClick={restar}>-</button>
+                    <p>Cantidad: <span>{contador}</span></p>
+                    <button className='btn btn-color' onClick={handleClick}>+</button>
                 </div>
+                <div>
+                <button onAdd={miOnAdd} className='btn btn-color'>Pagar</button>    
+                </div>    
             </div>
-            <div>
-            <h4>{props.nombre}</h4>
-                    <p>$<span>{props.valor}</span></p>
-                    <p>$<span>{props.newvalor}</span></p>
-                    <p>cantidad: <span>{contador}</span></p>
-                    <button onClick={handleClick} className='btn btn-color'>aumentar</button>
-            </div>
-
         </div>
     </div>
-    
-    </>
     )
- 
 }
 export default Main

@@ -153,4 +153,18 @@
         color:#fff;
       }
   }
+  .cantidad {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+          border: 1px solid $color-primario;
+
+      }
+      p {
+          font-size: 2rem;
+          padding: 1rem;
+          border: 1px solid $color-primario;
+      }
+  }
 
